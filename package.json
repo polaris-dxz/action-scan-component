@@ -1,7 +1,7 @@
 {
-  "name": "javascript-action",
+  "name": "scan-components-action",
   "version": "1.0.0",
-  "description": "JavaScript Action Template",
+  "description": "扫描组件替换进度",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",

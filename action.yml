@@ -1,13 +1,12 @@
 name: 'Wait'
 description: 'Wait a designated number of milliseconds'
-inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
-    required: true
-    default: '1000'
+branding:
+  icon: 'archive'
+  color: 'blue'
+  
 outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+  result: # output will be available to future steps
+    description: '组件替换扫描进度结果'
 runs:
   using: 'node16'
   main: 'dist/index.js'

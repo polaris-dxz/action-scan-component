@@ -6,6 +6,24 @@ on:
       - main
       - 'releases/*'
 
+inputs:
+  project:  # id of input
+    description: 'project 分支'
+    required: true
+    default: 'master'
+  wiki:  # id of input
+    description: 'wiki 分支'
+    required: true
+    default: 'master'
+  aicommon:  # id of input
+    description: 'ai common 库分支'
+    required: true
+    default: 'master'
+  webcommon:  # id of input
+    description: 'common 库分支'
+    required: true
+    default: 'master'
+
 jobs:
   # unit tests
   units:
@@ -15,11 +33,45 @@ jobs:
     - run: npm ci
     - run: npm test
 
+    - name: Checkout ones-project-web
+      uses: actions/checkout@v3
+      with:
+        repository: BangWork/ones-project-web
+        ssh-key: ${{ secrets.ONES_SSH_KEY }}
+        ref: ${{ inputs.project }}
+        clean: false
+        path: ones-project-web
+    
+    - name: Checkout ones-ai-web-common
+      uses: actions/checkout@v3
+      with:
+        repository: BangWork/ones-ai-web-common
+        ssh-key: ${{ secrets.ONES_SSH_KEY }}
+        ref: ${{ inputs.aicommon }}
+        clean: false
+        path: ones-ai-web-common
+
+    - name: Checkout wiki-web
+      uses: actions/checkout@v3
+      with:
+        repository: BangWork/wiki-web
+        ssh-key: ${{ secrets.ONES_SSH_KEY }}
+        ref: ${{ inputs.wiki }}
+        clean: false
+        path: wiki-web
+
+    - name: Checkout ones-web-common
+      uses: actions/checkout@v3
+      with:
+        repository: BangWork/ones-web-common
+        ssh-key: ${{ secrets.ONES_SSH_KEY }}
+        ref: ${{ inputs.webcommon }}
+        clean: false
+        path: ones-web-common
+
   # test action works running from the graph
   test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
     - uses: ./
-      with:
-        milliseconds: 1000
