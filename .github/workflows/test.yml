@@ -64,9 +64,5 @@ jobs:
         clean: false
         path: ones-web-common
 
-  # test action works running from the graph
-  test:
-    runs-on: ubuntu-latest
-    steps:
     - uses: actions/checkout@v3
     - uses: ./
