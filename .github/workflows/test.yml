@@ -5,24 +5,24 @@ on:
     branches:
       - main
       - 'releases/*'
-
-inputs:
-  project:  # id of input
-    description: 'project 分支'
-    required: true
-    default: 'master'
-  wiki:  # id of input
-    description: 'wiki 分支'
-    required: true
-    default: 'master'
-  aicommon:  # id of input
-    description: 'ai common 库分支'
-    required: true
-    default: 'master'
-  webcommon:  # id of input
-    description: 'common 库分支'
-    required: true
-    default: 'master'
+   workflow_dispatch:
+   inputs:
+      project:  # id of input
+        description: 'project 分支'
+        required: true
+        default: 'master'
+      wiki:  # id of input
+        description: 'wiki 分支'
+        required: true
+        default: 'master'
+      aicommon:  # id of input
+        description: 'ai common 库分支'
+        required: true
+        default: 'master'
+      webcommon:  # id of input
+        description: 'common 库分支'
+        required: true
+        default: 'master'
 
 jobs:
   # unit tests
