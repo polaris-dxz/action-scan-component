@@ -20,10 +20,14 @@ const componentMap = {
   LeftRightCardWrapper: 'Card',
   Cascader: 'Cascader',
   Checkbox: 'Checkbox',
+  SquareCheckbox: 'Checkbox',
+  BaseCheckbox: 'Checkbox',
+  NewCheckbox: 'Checkbox',
   Col: 'Col',
   Collapse: 'Collapse',
   ConfigProvider: 'ConfigProvider',
   LocaleProvider: 'ConfigProvider',
+  OutsideClickProvider: 'ConfigProvider',
   DatePicker: 'DatePicker',
   Calendar: 'DatePicker',
   PopoverCalendar: 'DatePicker',
@@ -33,6 +37,8 @@ const componentMap = {
   RelativeDatePicker: 'DatePicker',
   RcDatePicker: 'DatePicker',
   wrapPicker: 'DatePicker',
+  DateRangeInput: 'DatePicker',
+  DateRangeInfoFragment: 'DatePicker',
   Divider: 'Divider',
   Drawer: 'Drawer',
   Dropdown: 'Dropdown',
@@ -42,6 +48,10 @@ const componentMap = {
   Highlight: 'Highlight',
   Input: 'Input',
   BaseInput: 'Input',
+  TextInput: 'Input',
+  SearchInput: 'Input',
+  Textarea: 'Input',
+  BaseTextarea: 'Input',
   InputLinkify: 'Input',
   InputNumber: 'InputNumber',
   AntInputNumber: 'InputNumber',
@@ -84,6 +94,9 @@ const componentMap = {
   Progress: 'Progress',
   Radio: 'Radio',
   RadioGroup: 'Radio',
+  // 暂无对应组件
+  // iconRadioFactory: 'Radio',
+  // radioGroupFactory: 'Radio',
   Result: 'Result',
   Row: 'Row',
   Select: 'Select',
@@ -93,6 +106,8 @@ const componentMap = {
   DropdownMultiSelect: 'Select',
   DropdownSingleSelect: 'Select',
   VirtualizeSelect: 'Select',
+  // FilterableSelect: 'Select',
+  EnhanceSelect: 'Select',
   Skeleton: 'Skeleton',
   Slider: 'Slider',
   Space: 'Space',
@@ -152,7 +167,11 @@ const invalidResult = {
     ],
   },
   InputNumber: {
-    files: ['ones-project-web/src/scripts/ui/views/automation/field_components'],
+    files: [
+      'ones-project-web/src/scripts/ui/views/automation/field_components',
+      'ones-ai-web-common/packages/widgets/src/scripts/field_input/const.tsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/field_input/items/script_field_type_float.tsx',
+    ],
     packages: ['@ones-ai/widgets'],
   },
   Modal: {
@@ -218,6 +237,7 @@ function dfs(targetPath) {
       return
     }
 
+    // 本地排除 node_modules 目录
     if (filePath.includes('node_modules')) {
       return
     }
@@ -270,22 +290,68 @@ function dfs(targetPath) {
             }
           })
       })
+
+      // 样式扫描
+      const styleMatchArray = [...data.matchAll(/(?<!\w)ant(-.*(?=['|"])|\/.*\s)/gm)]
+      styleMatchArray.forEach((item) => {
+        const name = 'antd'
+        if (!components[name]) {
+          components[name] = {
+            new: 0,
+            old: 0,
+            files: {},
+          }
+        }
+        components[name].files[path.relative(path.resolve(), filePath)] = item[0]
+        components[name].old++
+        // 样式扫描进度不影响总替换进度x
+        // components.all.old++
+      })
     }
   })
+}
+
+const getAiCommonPath = () => {
+  const aiCommon = '../ones-ai-web-common/packages'
+  if (fs.existsSync(aiCommon)) {
+    return [aiCommon]
+  } else {
+    const projectAiCommon = '../ones-project-web/ones-ai-web-common'
+    const wikiAiCommon = '../wiki-web/ones-ai-web-common'
+
+    const commons = []
+    ;[projectAiCommon, wikiAiCommon].forEach((c) => {
+      if (!fs.existsSync(c)) {
+        console.error(`${c} not exists`)
+      } else {
+        commons.push(c)
+      }
+    })
+
+    const refs = commons.map((c) => c + '/.git/HEAD')
+    if (refs.length > 1) {
+      const projectRef = fs.readFileSync(refs[0], 'utf-8')
+      const wikiRef = fs.readFileSync(refs[1], 'utf-8')
+      if (projectRef !== wikiRef) {
+        console.error(
+          `请将 project 和 wiki 中的 common 库指定为同一分支!\nproject ${projectRef}wiki ${wikiRef}`
+        )
+        process.exit(1)
+      }
+    }
+    return commons.map((c) => c + '/packages')
+  }
 }
 
 ;[
   '../ones-project-web/src',
   '../wiki-web/src',
-  '../ones-ai-web-common/packages',
   '../ones-web-common/packages',
+  ...getAiCommonPath(),
 ].forEach(dfs)
 
 Object.keys(components).forEach((item) => {
   components[item].coverage =
     ((components[item].new / (components[item].new + components[item].old)) * 100).toFixed(2) + '%'
 })
-
 fs.writeFileSync(path.resolve('dist/progress.json'), JSON.stringify(components, null, 2))
-
-module.exports = components
