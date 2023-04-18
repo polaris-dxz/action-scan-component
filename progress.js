@@ -27,7 +27,9 @@ const componentMap = {
   Collapse: 'Collapse',
   ConfigProvider: 'ConfigProvider',
   LocaleProvider: 'ConfigProvider',
-  OutsideClickProvider: 'ConfigProvider',
+  // 自己实现的 ConfigProvider，与组件库无关
+  // OutsideClickProvider: 'ConfigProvider',
+  Antd2LocaleProvider: 'ConfigProvider',
   DatePicker: 'DatePicker',
   Calendar: 'DatePicker',
   PopoverCalendar: 'DatePicker',
@@ -90,7 +92,7 @@ const componentMap = {
   DropDownUserCell: 'Option',
   PopupConfirm: 'PopupConfirm',
   Popover: 'Popover',
-  ProgressBar: 'Precent',
+  ProgressBar: 'Percent',
   Progress: 'Progress',
   Radio: 'Radio',
   RadioGroup: 'Radio',
@@ -116,6 +118,7 @@ const componentMap = {
   RcSwitch: 'Switch',
   Tabs: 'Tabs',
   FoldableTabs: 'Tabs',
+  TextFoldableTabs: 'Tabs',
   UrlFoldableTabs: 'Tabs',
   Tag: 'Tag',
   TimePicker: 'TimePicker',
@@ -159,7 +162,10 @@ const invalidResult = {
     files: ['ones-web-common/packages/graph/src/scripts'],
   },
   Empty: {
-    files: ['ones-project-web/src/scripts/ui/views/task_view/task_list/group_task_list/index.jsx'],
+    files: [
+      'ones-project-web/src/scripts/ui/views/task_view/task_list/group_task_list/index.jsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/field_input/index.tsx',
+    ],
   },
   Input: {
     files: [
@@ -169,7 +175,9 @@ const invalidResult = {
   InputNumber: {
     files: [
       'ones-project-web/src/scripts/ui/views/automation/field_components',
+      // 底层引用已改为 InputNumber
       'ones-ai-web-common/packages/widgets/src/scripts/field_input/const.tsx',
+      // 底层引用已改为 InputNumber
       'ones-ai-web-common/packages/widgets/src/scripts/field_input/items/script_field_type_float.tsx',
     ],
     packages: ['@ones-ai/widgets'],
@@ -189,16 +197,61 @@ const invalidResult = {
   Result: {
     files: ['ones-project-web/src/scripts/ppm/scripts/ui/components/dep_dialogs'],
   },
+  Select: {
+    files: [
+      // 暂时无法替换，无对应 OptionList 组件
+      'ones-ai-web-common/packages/devops/src/scripts/ui/views/configuration/pipeline_config_dialog/ci_select_dialog.tsx',
+      // 暂时无法替换，无对应 OptionList 组件
+      'ones-ai-web-common/packages/devops/src/scripts/ui/views/configuration/pipeline_config_dialog/repo_select_dialog.tsx',
+    ],
+  },
   Skeleton: {
     files: [
       'ones-project-web/src/scripts/ui/components/project_list/view/view_layout.tsx',
       'ones-ai-web-common/packages/components/src/scripts/team/user_group/member_table',
     ],
   },
+  Tree: {
+    files: [
+      // 组件库不支持虚拟滚动的 Tree 组件，不在上半年替换计划中
+      'ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_module/module_draggable_tree.jsx',
+      'ones-ai-web-common/packages/components/src/scripts/select_member_dialog/select_member_dialog.jsx',
+      'ones-ai-web-common/packages/components/src/scripts/team/team_department/department_index.jsx',
+      'ones-ai-web-common/packages/components/src/scripts/ui/views/task/related_wiki/add_related_wiki/wiki_choose_tree.jsx',
+      'ones-ai-web-common/packages/components/src/scripts/wiki/category-draggable_tree.jsx',
+      'ones-ai-web-common/packages/testcase/src/scripts/ui/components/testmodule/module_tree/library_module_draggable_tree.jsx',
+      'ones-ai-web-common/packages/wiki/src/scripts/ui/components/space/common_page_tree.jsx',
+      'ones-ai-web-common/packages/wiki/src/scripts/ui/components/space/page_tree_draggable.jsx',
+    ],
+  },
+  TreeSelect: {
+    files: [
+      // 需要替换成 Menu 组件，Menu 组件不支持选中父节点自动展开
+      'ones-ai-web-common/packages/testcase/src/scripts/ui/views/test_plan/create_test_report_dialog/test_plan_picker/sprint_tree/sprint_tree.jsx',
+    ],
+  },
+  Tooltip: {
+    files: [
+      // ones-web-common grpah 中的组件无法替换
+      'ones-web-common/packages/graph/src/scripts/application/workflow/shapes/status_node_tooltip.jsx',
+    ],
+  },
+  Checkbox: {
+    files: [
+      // ones-web-common grpah 中的组件无法替换
+      'ones-web-common/packages/graph/src/scripts/application/workflow/task_status_transition_graph_toolbar.tsx',
+    ],
+  },
   Table: {
     files: [
       'ones-ai-web-common/packages/unit/lib/dashboard/card/special_chart_card/index.tsx',
       'ones-ai-web-common/packages/widgets/node_modules/@ones-ai/fixed-data-table-2/examples/ContextExample.js',
+    ],
+  },
+  Avatar: {
+    files: [
+      // 底层已经使用组件库的 Avatar 组件
+      'ones-ai-web-common/packages/unit/lib/common_topbar/topbar_right/index.tsx',
     ],
   },
   Tag: {
@@ -217,8 +270,48 @@ const invalidResult = {
     ],
     packages: ['@ones-ai/components/src/scripts/user'],
   },
+  antd: {
+    files: [
+      // eslint 规则
+      'ones-web-common/packages/eslint-config/index.js',
+      'ones-web-common/packages/eslint-plugin-checkzh/lib/rules/no-antd-classname.js',
+      // Menu 组件替换后样式会移除
+      'ones-ai-web-common/packages/components/src/scripts/topbar/product_list.jsx',
+      'ones-ai-web-common/packages/unit/lib/left_nav_advance/LeftNavHeader.tsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/custom_dropdown_select.jsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/dropdown_menu.jsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/filterable_menu/filterable_menu__deprecated.jsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/layout/foldable_tabs.jsx',
+      // Tree 组件替换后样式会移除
+      'ones-ai-web-common/packages/components/src/scripts/ui/views/task/related_wiki/add_related_wiki/wiki_choose_tree.jsx',
+      'ones-ai-web-common/packages/editor/src/scripts/plugins/toc/page_choose_tree.jsx',
+      'ones-ai-web-common/packages/editor/src/scripts/plugins/toc/title_insert_content.jsx',
+      'ones-ai-web-common/packages/editor/src/scripts/plugins/toc/toc_content/page_table_of_content.jsx',
+      'ones-ai-web-common/packages/editor/src/scripts/plugins/toc/toc_content/title_table_of_content.jsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/select_tree/select_anttree.jsx',
+      // Transfer 组件替换后样式会移除
+      'ones-ai-web-common/packages/widgets/src/scripts/transfer/index.jsx',
+      // RC Calendar 组件替换后样式会移除
+      'ones-ai-web-common/packages/unit/lib/antd/date-picker/range_picker.jsx',
+      'ones-ai-web-common/packages/unit/lib/antd/popover_calendar.jsx',
+      'ones-ai-web-common/packages/unit/lib/dashboard/component/info_fragments/date_range_info_fragment.jsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/antd/popover_calendar.jsx',
+      // Table 组件替换后样式会移除
+      'ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_module/index.jsx',
+    ],
+  },
 }
+const ignorePath = ['node_modules', 'ones-ai-web-common/packages/onboarding']
 
+// 忽略组件不计入总替换进度
+const ignoreComponents = [
+  'Layout' ,
+  'List',
+  '​Upload',
+  'UserTransfer',
+  'Transfer'
+]
+// const ignoreComponents = [] // 上述组件计入总替换进度
 const components = {
   all: {
     new: 0,
@@ -233,12 +326,7 @@ function dfs(targetPath) {
     const filePath = path.join(fullPath, name)
 
     // 排除无须扫描的目录
-    if (/ones-ai-web-common\/packages\/onboarding/.test(filePath)) {
-      return
-    }
-
-    // 本地排除 node_modules 目录
-    if (filePath.includes('node_modules')) {
+    if (ignorePath.some((path) => filePath.includes(path))) {
       return
     }
 
@@ -282,11 +370,15 @@ function dfs(targetPath) {
             }
             if (/^@ones-design/.test(item[2])) {
               components[name].new++
-              components.all.new++
+              if (!ignoreComponents.includes(name)) {
+                components.all.new++
+              }
             } else {
               components[name].files[path.relative(path.resolve(), filePath)] = item[0]
               components[name].old++
-              components.all.old++
+              if (!ignoreComponents.includes(name)) {
+                components.all.old++
+              }
             }
           })
       })
@@ -302,9 +394,15 @@ function dfs(targetPath) {
             files: {},
           }
         }
+        if (
+          invalidResult[name]?.files?.some((i) => filePath.includes(i)) ||
+          invalidResult[name]?.packages?.some((i) => i == item[2])
+        ) {
+          return
+        }
         components[name].files[path.relative(path.resolve(), filePath)] = item[0]
         components[name].old++
-        // 样式扫描进度不影响总替换进度x
+        // 样式扫描进度不影响总替换进度
         // components.all.old++
       })
     }
