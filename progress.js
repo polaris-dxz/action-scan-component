@@ -6,6 +6,7 @@ const componentMap = {
   Action: 'Action',
   Alert: 'Alert',
   Hint: 'Alert',
+  Anchor: 'Anchor',
   AnchorNavigation: 'Anchor',
   Avatar: 'Avatar',
   BaseAvatar: 'Avatar',
@@ -20,16 +21,16 @@ const componentMap = {
   LeftRightCardWrapper: 'Card',
   Cascader: 'Cascader',
   Checkbox: 'Checkbox',
-  SquareCheckbox: 'Checkbox',
   BaseCheckbox: 'Checkbox',
   NewCheckbox: 'Checkbox',
+  SquareCheckbox: 'Checkbox',
   Col: 'Col',
   Collapse: 'Collapse',
   ConfigProvider: 'ConfigProvider',
+  Antd2LocaleProvider: 'ConfigProvider',
   LocaleProvider: 'ConfigProvider',
   // 自己实现的 ConfigProvider，与组件库无关
   // OutsideClickProvider: 'ConfigProvider',
-  Antd2LocaleProvider: 'ConfigProvider',
   DatePicker: 'DatePicker',
   Calendar: 'DatePicker',
   PopoverCalendar: 'DatePicker',
@@ -50,11 +51,11 @@ const componentMap = {
   Highlight: 'Highlight',
   Input: 'Input',
   BaseInput: 'Input',
-  TextInput: 'Input',
-  SearchInput: 'Input',
-  Textarea: 'Input',
   BaseTextarea: 'Input',
   InputLinkify: 'Input',
+  SearchInput: 'Input',
+  TextInput: 'Input',
+  Textarea: 'Input',
   InputNumber: 'InputNumber',
   AntInputNumber: 'InputNumber',
   BaseNumberInput: 'InputNumber',
@@ -90,9 +91,10 @@ const componentMap = {
   notification: 'Notification',
   Option: 'Option',
   DropDownUserCell: 'Option',
+  Percent: 'Percent',
+  ProgressBar: 'Percent',
   PopupConfirm: 'PopupConfirm',
   Popover: 'Popover',
-  ProgressBar: 'Percent',
   Progress: 'Progress',
   Radio: 'Radio',
   RadioGroup: 'Radio',
@@ -102,14 +104,13 @@ const componentMap = {
   Result: 'Result',
   Row: 'Row',
   Select: 'Select',
-  OptionList: 'Select',
+  EnhanceSelect: 'Select',
   OptionGroupList: 'Select',
   DropdownSelect: 'Select',
   DropdownMultiSelect: 'Select',
   DropdownSingleSelect: 'Select',
   VirtualizeSelect: 'Select',
   // FilterableSelect: 'Select',
-  EnhanceSelect: 'Select',
   Skeleton: 'Skeleton',
   Slider: 'Slider',
   Space: 'Space',
@@ -137,6 +138,7 @@ const componentMap = {
   Upload: '​Upload',
   AvatarUploader: '​Upload',
 
+  Filter: 'Filter',
   FilterEditor: 'Filter',
   NewFilterEditor: 'Filter',
   SimpleCustomTaskFilterEditor: 'Filter',
@@ -144,10 +146,12 @@ const componentMap = {
   Guide: 'Guide',
 
   Table: 'Table',
+  FilterableTable: 'Table',
   SimpleTable: 'Table',
   TaskList: 'Table',
   VirtualTable: 'Table',
   CanvasTable: 'CanvasTable',
+  createAdapter: 'Table',
 
   Transfer: 'Transfer',
   SelectMemberDialog: 'UserTransfer',
@@ -161,6 +165,16 @@ const invalidResult = {
   Action: {
     files: ['ones-web-common/packages/graph/src/scripts'],
   },
+  Avatar: {
+    files: ['ones-ai-web-common/packages/unit/lib/common_topbar/topbar_right/index.tsx'],
+  },
+  Anchor: {
+    files: [
+      // 底层逻辑已用组件库实现  https://github.com/BangWork/ones-design/issues/490#issuecomment-1541325468
+      'ones-project-web/src/scripts/ui/views/layout_editor/screen/components/form_root.jsx',
+      'ones-ai-web-common/packages/components/src/scripts/ui/views/global_add/task_edit_dialog/index.tsx',
+    ],
+  },
   Empty: {
     files: [
       'ones-project-web/src/scripts/ui/views/task_view/task_list/group_task_list/index.jsx',
@@ -170,17 +184,21 @@ const invalidResult = {
   Input: {
     files: [
       'ones-ai-web-common/packages/components/src/scripts/logs/message/item_message_editor/item_message_input.jsx',
+      // 底层引用已用过 ones-design  https://github.com/BangWork/ones-design/issues/490#issuecomment-1514215212
+      'ones-project-web/src/scripts/ui/components/project_list/main.tsx',
     ],
   },
   InputNumber: {
     files: [
       'ones-project-web/src/scripts/ui/views/automation/field_components',
-      // 底层引用已改为 InputNumber
-      'ones-ai-web-common/packages/widgets/src/scripts/field_input/const.tsx',
-      // 底层引用已改为 InputNumber
-      'ones-ai-web-common/packages/widgets/src/scripts/field_input/items/script_field_type_float.tsx',
+      'ones-ai-web-common/packages/widgets/src/scripts/field_input',
     ],
     packages: ['@ones-ai/widgets'],
+  },
+  Loading: {
+    packages: [
+      '@ones-ai/components/src/scripts/ui/views/task_view/task_list/static_table_list/loading',
+    ],
   },
   Modal: {
     files: ['ones-ai-web-common/packages/components/src/scripts/ui/widgets/dialog'],
@@ -213,7 +231,7 @@ const invalidResult = {
   },
   Tree: {
     files: [
-      // 组件库不支持虚拟滚动的 Tree 组件，不在上半年替换计划中
+      // 组件库不支持虚拟滚动的 Tree 组件，不在上半年替换计划中 https://github.com/BangWork/ones-design/issues/490#issuecomment-1506245418
       'ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_module/module_draggable_tree.jsx',
       'ones-ai-web-common/packages/components/src/scripts/select_member_dialog/select_member_dialog.jsx',
       'ones-ai-web-common/packages/components/src/scripts/team/team_department/department_index.jsx',
@@ -246,12 +264,6 @@ const invalidResult = {
     files: [
       'ones-ai-web-common/packages/unit/lib/dashboard/card/special_chart_card/index.tsx',
       'ones-ai-web-common/packages/widgets/node_modules/@ones-ai/fixed-data-table-2/examples/ContextExample.js',
-    ],
-  },
-  Avatar: {
-    files: [
-      // 底层已经使用组件库的 Avatar 组件
-      'ones-ai-web-common/packages/unit/lib/common_topbar/topbar_right/index.tsx',
     ],
   },
   Tag: {
@@ -300,18 +312,28 @@ const invalidResult = {
       'ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_module/index.jsx',
     ],
   },
+  DatePicker: {
+    files: [
+      // 底层已用组件库实现
+      '../ones-ai-web-common/packages/components/src/scripts/ui/views/filter/add_filter_query_content/index.jsx',
+      '../ones-ai-web-common/packages/components/src/scripts/ui/widgets/input/field_datetime_input.jsx',
+      '../ones-ai-web-common/packages/widgets/src/scripts/input/index.js',
+      '../ones-ai-web-common/packages/widgets/src/scripts/input/range_relative_date_picker.jsx',
+    ]
+  }
 }
 const ignorePath = ['node_modules', 'ones-ai-web-common/packages/onboarding']
 
+const args = process.argv.slice(2)
 // 忽略组件不计入总替换进度
-const ignoreComponents = [
+const ignoreComponents = args.length > 0 ? [
   'Layout' ,
   'List',
   '​Upload',
   'UserTransfer',
   'Transfer'
-]
-// const ignoreComponents = [] // 上述组件计入总替换进度
+] :[] 
+
 const components = {
   all: {
     new: 0,

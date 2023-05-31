@@ -1,110 +1,189 @@
 {
   "all": {
-    "new": 3783,
-    "old": 171,
-    "coverage": "95.68%"
+    "new": 4076,
+    "old": 245,
+    "coverage": "94.33%"
+  },
+  "Table": {
+    "new": 68,
+    "old": 56,
+    "files": {
+      "../ones-project-web/src/plugins/code_associated/scripts/devops_task_detail/index.tsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-project-web/src/plugins/code_associated/scripts/devops_task_detail/task_relate_pull_request.tsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-project-web/src/plugins/code_associated/scripts/task_detail/index.jsx": "import { AutoHeightList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ppm/scripts/ui/components/dep_dialogs/add_dep_link_dialog/table_list.jsx": "import { createAdapter, noRowRendererCreator } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_issue_type.jsx": "import TaskList from './task_list'",
+      "../ones-project-web/src/scripts/product/scripts/ui/views/product_setting/config/config_list.jsx": "import createAdapter from '@ones-ai/widgets/src/scripts/list_adapter'",
+      "../ones-project-web/src/scripts/ui/views/component/we_report/index.jsx": "import TaskList from '../task_list'",
+      "../ones-project-web/src/scripts/ui/views/do_setting/automation_setting/automation.tsx": "import Table from './virtualized_table'",
+      "../ones-project-web/src/scripts/ui/views/do_setting/issue_type_manager/issue_type_detail.jsx": "import { Toast, createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ui/views/do_setting/issue_type_manager/issue_type_list.jsx": "import { AntModal, createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ui/views/do_setting/project_manager/all_project_list.jsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ui/views/global_add/add_project/select_template_dialog.jsx": "import { createAdapter, MaxHeightList, Toast } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ui/views/project/setting/permission/issue_type_field_constraint_permission.jsx": "import { AutoHeightList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ui/views/task/related_ppm_task/related_ppm_task_list.tsx": "import { AutoHeightList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ui/views/task_view/task_list/group_task_list/index.jsx": "import TaskList from './task_list'",
+      "../ones-project-web/src/scripts/ui/views/task_view/task_list/switch_group_task_list/index.tsx": "import TaskList from '../new_task_list'",
+      "../ones-project-web/src/scripts/ui/views/user_center/dashboard_setting/generic/dashboard_table.jsx": "import { createAdapter, FitParentList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/attachment/resource_renderer.tsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/relate_ppm/related_ppm_task_list.jsx": "import { AutoHeightList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/related_task/related_task_list.tsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/related_wiki/related_wiki_renderer.tsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/test_case/related_testcase_renderer.tsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/test_plan/related_testplan_renderer.tsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'",
+      "../ones-ai-web-common/packages/components/src/scripts/organization/org_log/audit_log.tsx": "import Table from './components/table/index'",
+      "../ones-ai-web-common/packages/components/src/scripts/organization/org_member/member_list.jsx": "import {\n  AntModal,\n  createAdapter,\n  FitParentList,\n  multiSelectManager,\n  MultiSelectManagerChildPropTypes,\n} from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/product_setting/common/item_manage_panel.jsx": "import { FilterableTable } from '../../ui/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/product_setting/field_manager/field_table.jsx": "import { FilterableTable } from '../../ui/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/product_user_grant_fail_table_list.jsx": "import { createAdapter, FitParentList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/product_user_license.tsx": "import { createAdapter, FitParentList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/team/team_member/add_member.tsx": "import { AntModal, FitParentList, createAdapter, Toast } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/team/team_payment/org_notifiers.jsx": "import { SimpleTable as Table, createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/team/team_permission/permission_list.jsx": "import { SimpleTable as Table, createAdapter, Toast } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/team/user_group/member_table/index.tsx": "import Table from './table'",
+      "../ones-ai-web-common/packages/components/src/scripts/transition_field_dialog/components/assess_manhour/index.tsx": "import { Table } from 'antd'",
+      "../ones-ai-web-common/packages/components/src/scripts/transition_field_dialog/components/manhour/index.tsx": "import { Table } from 'antd'",
+      "../ones-ai-web-common/packages/components/src/scripts/transition_field_dialog/components/related_wiki/index.tsx": "import { AntModal, AutoHeightList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/components/message_input/at_user_list.jsx": "import { MaxHeightList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task/related_case/related_case/related_library_test_case.tsx": "import { AntModal, createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task/related_case/related_case/related_test_plan.tsx": "import { AntModal, createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task/related_case/related_case/related_test_result.tsx": "import { AntModal, createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task/related_task/related_task_list.jsx": "import { createAdapter, AutoHeightList, Toast } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task/related_wiki/related_wiki.jsx": "import { AntModal, AutoHeightList, createAdapter, Toast } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/widgets/filterable_table.jsx": "import { createAdapter, AutoHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/editor/src/scripts/plugins/atuser/at_user_list.jsx": "import { createAdapter, MaxHeightList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/performance/src/scripts/ui/views/component/performance_dashboard_list/dashboards_table_body/index.jsx": "import { createAdapter, FitParentList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/plan/src/scripts/ui/views/gantt/sync/sync_data_table.jsx": "import { createAdapter, FitParentList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/plan/src/scripts/ui/views/program/program_detail/member/role_list/role_list.jsx": "import { createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/plan/src/scripts/ui/views/program/program_detail/member/role_member_and_permission/role_member/role_member_list.jsx": "import { createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/testcase/src/scripts/ui/components/dialog/edit_test_case/edit_plan_test_case/plan_test_case_related_list.jsx": "import { AntModal, createAdapter, AutoHeightList, Toast } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/testcase/src/scripts/ui/components/infinite_test_case_list/index.jsx": "import { FitParentList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/testcase/src/scripts/ui/views/index/index_test_library_list/test_library_list.jsx": "import { Toast, FitParentList, createAdapter } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/testcase/src/scripts/ui/views/index/index_test_plan_list/test_plan_list.jsx": "import { createAdapter, FitParentList } from '@ones-ai/widgets'",
+      "../ones-ai-web-common/packages/widgets/src/scripts/list/columnized_table/columnized_table.jsx": "import { Column, Table } from '@ones-ai/fixed-data-table-2'"
+    },
+    "coverage": "54.84%"
   },
   "Tooltip": {
-    "new": 399,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
-  },
-  "Action": {
-    "new": 103,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
-  },
-  "Tag": {
-    "new": 73,
+    "new": 411,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
   "Typography": {
-    "new": 288,
+    "new": 331,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
-  "Loading": {
-    "new": 216,
+  "Toast": {
+    "new": 273,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
+  },
+  "Space": {
+    "new": 105,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
+  },
+  "Form": {
+    "new": 131,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
+  },
+  "Modal": {
+    "new": 141,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
   "Button": {
-    "new": 539,
+    "new": 556,
     "old": 1,
     "files": {
       "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'"
     },
-    "coverage": "99.81%"
+    "coverage": "99.82%"
   },
-  "Space": {
-    "new": 100,
+  "Row": {
+    "new": 16,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
+  "Col": {
+    "new": 16,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
+  },
+  "Select": {
+    "new": 199,
+    "old": 1,
+    "files": {
+      "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'"
+    },
+    "coverage": "99.50%"
+  },
+  "Tag": {
+    "new": 83,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
+  },
+  "Action": {
+    "new": 112,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
+  },
+  "Loading": {
+    "new": 219,
+    "old": 7,
+    "files": {
+      "../ones-project-web/src/scripts/ui/views/task_view/task_list/new_task_list/components/task_table_list/index.tsx": "import Loading from '@ones-ai/components/src/scripts/ui/views/task_view/task_list/static_table_list/loading'",
+      "../ones-ai-web-common/packages/components/src/scripts/project_view/project_table/index.tsx": "import Loading from './components/loading'",
+      "../ones-ai-web-common/packages/components/src/scripts/signup_personalize/com_steps/com_step_five.tsx": "import Loading from '../../../svg_icons/colorful/loading.svg'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task_list/components/task_group_list/index.tsx": "import Loading from './loading'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task_view/task_list/failure_result_task_list/index.tsx": "import Loading from '@ones-ai/components/src/scripts/ui/views/task_view/task_list/static_table_list/loading'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task_view/task_list/static_table_list/index.tsx": "import Loading from './loading'",
+      "../ones-ai-web-common/packages/wiki/src/scripts/ui/components/task_list/select_task_list/index.tsx": "import Loading from '@ones-ai/components/src/scripts/ui/views/task_view/task_list/static_table_list/loading'"
+    },
+    "coverage": "96.90%"
+  },
   "Alert": {
-    "new": 181,
+    "new": 179,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
   "ConfigProvider": {
-    "new": 20,
-    "old": 20,
+    "new": 21,
+    "old": 6,
     "files": {
-      "../ones-project-web/src/scripts/desktop_routes.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-project-web/src/scripts/root.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
       "../wiki-web/src/scripts/components/provider/desktop_common_provider.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
       "../wiki-web/src/scripts/index.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/components/src/scripts/guide_master/guide_master.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/components/src/scripts/provider/mobile_common_provider.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/atuser/editor_at_user_provider.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/codesyntax/editor_code_syntax_provider.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/file/editor_file_dialog_provider.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/markdown/editor_markdown_provider.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/table/table_toolbar_provider.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/task/task_card_editor_provider.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/toc/table_of_content_editor_provider.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/unit/lib/antd/modal/confirm.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/unit/lib/antd2_locale_provider.tsx": "import LocaleProvider from 'antd/lib/locale-provider'",
-      "../ones-ai-web-common/packages/unit/lib/hollow_portal/index.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/unit/lib/hollow_portal_hoc/index.jsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/wiz-editor/src/scripts/plugins/file_list/file_list.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
+      "../ones-ai-web-common/packages/wiz-editor/src/scripts/plugins/file_list/dom/file_list_content.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
+      "../ones-ai-web-common/packages/wiz-editor/src/scripts/plugins/task_card/create_block_content.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
       "../ones-ai-web-common/packages/wiz-editor/src/scripts/plugins/task_card/task_card.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'",
-      "../ones-ai-web-common/packages/wiz-editor/src/scripts/plugins/task_list/task_list.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'"
+      "../ones-ai-web-common/packages/wiz-editor/src/scripts/plugins/task_list/embed_content.tsx": "import { Antd2LocaleProvider } from '@ones-ai/unit/lib/antd2_locale_provider'"
     },
-    "coverage": "50.00%"
-  },
-  "Select": {
-    "new": 195,
-    "old": 1,
-    "files": {
-      "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'"
-    },
-    "coverage": "99.49%"
-  },
-  "Modal": {
-    "new": 120,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
+    "coverage": "77.78%"
   },
   "Dropdown": {
-    "new": 70,
+    "new": 71,
     "old": 1,
     "files": {
       "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'"
     },
-    "coverage": "98.59%"
+    "coverage": "98.61%"
   },
   "Popover": {
-    "new": 89,
+    "new": 85,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
@@ -118,99 +197,54 @@
     "coverage": "99.15%"
   },
   "Input": {
-    "new": 330,
+    "new": 331,
     "old": 16,
     "files": {
-      "../ones-project-web/src/scripts/ui/components/project_list/main.tsx": "import SearchInput from './panel/top_banner/search_input'",
       "../ones-project-web/src/scripts/ui/views/desk_home/detail_modal/basic_title.tsx": "import { Textarea } from '@ones-ai/widgets'",
       "../ones-project-web/src/scripts/ui/views/task/task_field/input/text_input.tsx": "import { InputLinkify, TextAreaLinkify } from '@ones-ai/widgets'",
       "../ones-project-web/src/scripts/ui/views/task/task_field/task_field_source.ts": "import {\n  TextAreaInput,\n  TextAreaPrimaryField,\n  TextInput,\n  TextPrimaryField,\n} from './input/text_input'",
-      "../ones-project-web/src/scripts/ui/widgets/input/field_input_without_status_manage_wrapper.jsx": "import {\n  InputNumber,\n  TextStateManageWrapper,\n  InputLinkify,\n  TextAreaLinkify,\n  UniteDateTimeInputSubmitWrapper,\n  DateTimeInput,\n} from '@ones-ai/widgets'",
+      "../ones-project-web/src/scripts/ui/widgets/input/field_input_without_status_manage_wrapper.jsx": "import {\n  InputNumber,\n  TextStateManageWrapper,\n  InputLinkify,\n  TextAreaLinkify,\n  UniteDateTimeInputSubmitWrapper,\n  DateTimeInput,\n  FocusManageWrapper,\n} from '@ones-ai/widgets'",
       "../ones-ai-web-common/packages/components/src/scripts/dashboard/input/field_input_without_status_manage_wrapper.jsx": "import {\n  InputNumber,\n  FocusManageWrapper,\n  TextStateManageWrapper,\n  InputLinkify,\n  TextAreaLinkify,\n} from '@ones-ai/widgets'",
       "../ones-ai-web-common/packages/components/src/scripts/dashboard/input/index.js": "import BaseTextarea from './base_textarea'",
       "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'",
+      "../ones-ai-web-common/packages/components/src/scripts/ui/views/advance_search/search_home.tsx": "import SearchInput from './features/search_input'",
       "../ones-ai-web-common/packages/components/src/scripts/ui/widgets/input/field_input.jsx": "import {\n  InputNumber,\n  DateTimeInput,\n  FocusManageWrapper as FocusManageWrapperBase,\n  InputLinkify,\n  NumberStateManagerWrapper,\n  TextAreaLinkify,\n  TextStateManageWrapper,\n  Toast,\n  RichText,\n  UniteDateTimeInputSubmitWrapper,\n} from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/widgets/src/scripts/field_input/const.tsx": "import InputLinkify from './items/input_linkify'",
-      "../ones-ai-web-common/packages/widgets/src/scripts/field_input/items/base_area.tsx": "import BaseTextarea from '@ones-ai/widgets/src/scripts/input/base_textarea'",
+      "../ones-ai-web-common/packages/widgets/src/scripts/field_input/config.tsx": "import InputLinkify from './items/input_linkify'",
+      "../ones-ai-web-common/packages/widgets/src/scripts/field_input/items/base_input/index.ts": "import BaseInput from './base_input'",
       "../ones-ai-web-common/packages/widgets/src/scripts/field_input/items/input_linkify.tsx": "import { InputLinkify } from '@ones-ai/widgets'",
       "../ones-ai-web-common/packages/widgets/src/scripts/input/base_textarea.jsx": "import { Input } from 'antd'",
       "../ones-ai-web-common/packages/widgets/src/scripts/input/index.js": "import BaseTextarea from './base_textarea'",
       "../ones-ai-web-common/packages/widgets/src/scripts/input/textarea_linkify.jsx": "import { Input } from 'antd'"
     },
-    "coverage": "95.38%"
-  },
-  "Toast": {
-    "new": 222,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
+    "coverage": "95.39%"
   },
   "Radio": {
-    "new": 79,
+    "new": 80,
     "old": 1,
     "files": {
       "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'"
     },
-    "coverage": "98.75%"
+    "coverage": "98.77%"
   },
   "Skeleton": {
-    "new": 59,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
-  },
-  "Table": {
-    "new": 27,
-    "old": 43,
+    "new": 66,
+    "old": 1,
     "files": {
-      "../ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_issue_type.jsx": "import TaskList from './task_list'",
-      "../ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_module/index.jsx": "import { Table } from 'antd'",
-      "../ones-project-web/src/scripts/ui/components/stage_manager/stage_manager.jsx": "import { createAdapter, AntModal, Toast, SimpleTable } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/components/status_manager/status_config_editor.jsx": "import { AntModal, SimpleTable, Toast } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/component/we_report/index.jsx": "import TaskList from '../task_list'",
-      "../ones-project-web/src/scripts/ui/views/do_setting/automation_setting/automation.tsx": "import Table from './virtualized_table'",
-      "../ones-project-web/src/scripts/ui/views/do_setting/automation_setting/history.tsx": "import Table from './virtualized_table'",
-      "../ones-project-web/src/scripts/ui/views/do_setting/priority_manager/index.jsx": "import { AntModal, createAdapter, SimpleTable, Toast } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/do_setting/role_management/index.jsx": "import { AntModal, Toast, SimpleTable, createAdapter, InputModule } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/layout_editor/components/add_fields_dialog.jsx": "import { AntModal, createAdapter, SimpleTable } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/layout_editor/components/field_config_dialog/fields_table.jsx": "import { AntModal, createAdapter, SimpleTable } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/layout_editor/components/field_config_dialog/key_fields_panel.jsx": "import Table from '../../../../widgets/table'",
-      "../ones-project-web/src/scripts/ui/views/project/component_designer/settings/agilekanban_manage.jsx": "import { AntModal, SimpleTable } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/project/component_designer/settings/function_setting.jsx": "import { SimpleTable } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/project/report/components/report_editor/components/report_data_table/index.jsx": "import { Table } from './table'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/sprint/sprint_field.jsx": "import { SimpleTable, Toast } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/template/task_list_key_field_dialog/list_key_field_panel.tsx": "import Table from '../../../../../widgets/table'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/template/template_notification_config/template_notification_config_custom_assign.jsx": "import Table from '../../../../../widgets/table'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/template/template_notification_config/template_notification_config_system.jsx": "import Table from '../../../../../widgets/table'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/template/template_permission_config.jsx": "import Table from '../../../../widgets/table'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/template/template_remain_config/base_setting_remain_config.jsx": "import { AntModal, createAdapter, SimpleTable, Toast } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/template/transition_detail/transition_attribute.jsx": "import { AntModal, SimpleTable, Toast } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/project/setting/template/transition_detail/transition_post_function.jsx": "import { AntModal, SimpleTable, Toast } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/task_view/task_list/group_task_list/index.jsx": "import TaskList from './task_list'",
-      "../ones-project-web/src/scripts/ui/widgets/transition_field_dialog_assess_manhour.jsx": "import { Table } from 'antd'",
-      "../ones-project-web/src/scripts/ui/widgets/transition_field_dialog_manhour.jsx": "import { Table } from 'antd'",
-      "../ones-ai-web-common/packages/components/src/scripts/global_products_expired_notice/products_expired_dialog.jsx": "import { Table } from 'antd'",
-      "../ones-ai-web-common/packages/components/src/scripts/global_products_expired_notice/products_will_expired_dialog.jsx": "import { Table } from 'antd'",
-      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/followers/followers_renderer.tsx": "import { SimpleTable as Table, createAdapter } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/components/src/scripts/layout/blocks/manhours/created_manhours_renderer.jsx": "import { Table } from 'antd'",
-      "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'",
-      "../ones-ai-web-common/packages/components/src/scripts/organization/org_log/audit_log.tsx": "import Table from './components/table/index'",
-      "../ones-ai-web-common/packages/components/src/scripts/team/team_left_nav_item_name/custom_left_nav_list.jsx": "import { SimpleTable } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/components/src/scripts/team/team_left_nav_item_name/system_left_nav_list.jsx": "import { Toast, SimpleTable, EmptyCell } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/components/src/scripts/team/team_payment/org_notifiers.jsx": "import { SimpleTable as Table, createAdapter } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/components/src/scripts/team/team_permission/permission_list.jsx": "import { SimpleTable as Table, createAdapter, Toast } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/components/src/scripts/team/team_top_nav_item_name/system_top_nav_list.jsx": "import { Toast, SimpleTable, EmptyCell } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/components/src/scripts/team/user_group/member_table/index.tsx": "import Table from './table'",
-      "../ones-ai-web-common/packages/components/src/scripts/ui/views/task/batch_upload_task/field_table.jsx": "import { Table } from 'antd'",
-      "../ones-ai-web-common/packages/testcase/src/scripts/ui/views/settings/right_setting_components/project_setting_home/project_setting_home.jsx": "import { createAdapter, SimpleTable } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/testcase/src/scripts/ui/views/settings/right_setting_components/property_config_edit/property_config_edit.jsx": "import {\n  AntModal,\n  Toast,\n  TwoEditIconsCell,\n  EmptyCell,\n  InputModule,\n  SimpleTable,\n} from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/unit/lib/dashboard/card/card_config/card_config_project_fields/all_default_fields/index.tsx": "import { SimpleTable } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/widgets/src/scripts/list/columnized_table/columnized_table.jsx": "import { Column, Table } from '@ones-ai/fixed-data-table-2'"
+      "../ones-project-web/src/scripts/ui/views/task/desc/index.jsx": "import Skeleton from './skeleton'"
     },
-    "coverage": "38.57%"
+    "coverage": "98.51%"
+  },
+  "List": {
+    "new": 3,
+    "old": 2,
+    "files": {
+      "../ones-project-web/src/scripts/ui/components/manage_page/manage_page.tsx": "import List from './list'",
+      "../ones-ai-web-common/packages/widgets/src/scripts/transfer/index.jsx": "import List from './list'"
+    },
+    "coverage": "60.00%"
   },
   "Breadcrumb": {
-    "new": 103,
+    "new": 102,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
@@ -251,8 +285,8 @@
     "coverage": "100.00%"
   },
   "Layout": {
-    "new": 0,
-    "old": 94,
+    "new": 2,
+    "old": 95,
     "files": {
       "../ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_issue_type.jsx": "import { LayoutTopMainFixed, LayoutMainFixed, UrlFoldableTabsNew } from '@ones-ai/widgets'",
       "../ones-project-web/src/scripts/product/scripts/ui/views/product_detail/product_module/index.jsx": "import { LayoutMainFixed, LayoutTopMainFixed, UrlFoldableTabsNew } from '@ones-ai/widgets'",
@@ -320,9 +354,10 @@
       "../ones-ai-web-common/packages/testcase/src/scripts/ui/views/test_report/list_test_report/report_list_widgets/report_list_view_layout.jsx": "import { CommonDetailLayout, LayoutMainFixedWide } from '@ones-ai/widgets'",
       "../ones-ai-web-common/packages/testcase/src/scripts/ui/views/testcase_library/library_left_nav.jsx": "import { LeftNavSection, AntModal, Toast } from '@ones-ai/widgets'",
       "../ones-ai-web-common/packages/testcase/src/scripts/ui/views/testcase_library/library_module/index.jsx": "import { AntModal, LayoutLeftRightResizable, Toast } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/unit/lib/antd/modal/quick_nav.jsx": "import { LayoutLeftMainFull } from '@ones-ai/widgets/src/scripts/layout'"
+      "../ones-ai-web-common/packages/unit/lib/antd/modal/quick_nav.jsx": "import { LayoutLeftMainFull } from '@ones-ai/widgets/src/scripts/layout'",
+      "../ones-ai-web-common/packages/widgets/src/scripts/layout/index.jsx": "import LayoutLeftRightResizable from './layout_left_right_reiszable'"
     },
-    "coverage": "0.00%"
+    "coverage": "2.06%"
   },
   "antd": {
     "new": 0,
@@ -353,67 +388,40 @@
     "coverage": "76.00%"
   },
   "Empty": {
-    "new": 19,
-    "old": 1,
+    "new": 31,
+    "old": 3,
     "files": {
-      "../ones-ai-web-common/packages/components/src/scripts/team/confluence_import/features/migration/space-choose/spaces.tsx": "import { Empty } from './empty'"
+      "../ones-project-web/src/scripts/ui/views/task_view/task_list/switch_group_task_list/index.tsx": "import Empty from '../group_task_list/empty'",
+      "../ones-ai-web-common/packages/components/src/scripts/team/confluence_import/features/migration/space-choose/spaces.tsx": "import { Empty } from './empty'",
+      "../ones-ai-web-common/packages/wiki/src/scripts/ui/components/task_list/select_task_list/index.tsx": "import Empty from '@ones-ai/components/src/scripts/ui/views/task_view/task_list/empty_task_list'"
     },
-    "coverage": "95.00%"
-  },
-  "List": {
-    "new": 1,
-    "old": 2,
-    "files": {
-      "../ones-project-web/src/scripts/ui/components/manage_page/manage_page.tsx": "import List from './list'",
-      "../ones-ai-web-common/packages/widgets/src/scripts/transfer/index.jsx": "import List from './list'"
-    },
-    "coverage": "33.33%"
-  },
-  "Form": {
-    "new": 121,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
+    "coverage": "91.18%"
   },
   "Tabs": {
-    "new": 33,
+    "new": 35,
     "old": 1,
     "files": {
       "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/with_injection_router.tsx": "import { UrlFoldableTabs } from '@ones-ai/unit'"
     },
-    "coverage": "97.06%"
+    "coverage": "97.22%"
   },
   "Menu": {
-    "new": 15,
-    "old": 4,
+    "new": 29,
+    "old": 2,
     "files": {
       "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/open_platform_connector.js": "import {\n  Button,\n  Select,\n  Dropdown,\n  Menu,\n  Icon,\n  Input,\n  Radio,\n  Checkbox,\n  TimePicker,\n  Table,\n} from 'antd'",
-      "../ones-ai-web-common/packages/editor/src/scripts/plugins/extrabutton/extra_text_button.jsx": "import { Menu } from 'antd'",
-      "../ones-ai-web-common/packages/unit/lib/left_nav_advance/LeftNavHeader.tsx": "import { Menu } from 'antd'",
-      "../ones-ai-web-common/packages/widgets/src/scripts/filterable_menu/filterable_menu__deprecated.jsx": "import { Menu } from 'antd'"
+      "../ones-ai-web-common/packages/editor/src/scripts/plugins/extrabutton/extra_text_button.jsx": "import { Menu } from 'antd'"
     },
-    "coverage": "78.95%"
-  },
-  "Col": {
-    "new": 13,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
+    "coverage": "93.55%"
   },
   "Divider": {
-    "new": 18,
-    "old": 0,
-    "files": {},
-    "coverage": "100.00%"
-  },
-  "Row": {
-    "new": 13,
+    "new": 19,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
   "Highlight": {
-    "new": 12,
+    "new": 13,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
@@ -425,25 +433,15 @@
     "coverage": "100.00%"
   },
   "DatePicker": {
-    "new": 20,
-    "old": 22,
+    "new": 25,
+    "old": 7,
     "files": {
-      "../ones-project-web/src/scripts/ui/views/project/report/components/report_editor/components/date_range_filter_field_input.jsx": "import { DateRangeInput } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/project/task_gantt/edit_gantt_item_gantt_props.jsx": "import { AntModal, DateRangeInput, InputModule, Toast } from '@ones-ai/widgets'",
-      "../ones-project-web/src/scripts/ui/views/task/task_field/input/time_input.tsx": "import { DateTimeInput, PopoverCalendar, UniteDateTimeInputSubmitWrapper } from '@ones-ai/widgets'",
       "../ones-ai-web-common/packages/components/src/scripts/ui/views/filter/add_filter_query_content/index.jsx": "import {\n  InputModule,\n  inputModuleWrapper,\n  RelativeDatePicker,\n  RangeRelativeDatePicker,\n} from '@ones-ai/widgets'",
       "../ones-ai-web-common/packages/components/src/scripts/ui/widgets/input/field_datetime_input.jsx": "import { RelativeDatePicker, RangeRelativeDatePicker } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/unit/lib/antd/date-picker/range_picker.jsx": "import wrapPicker from 'antd/lib/date-picker/wrapPicker'",
-      "../ones-ai-web-common/packages/unit/lib/antd/popover_calendar.jsx": "import wrapPicker from 'antd/lib/date-picker/wrapPicker'",
-      "../ones-ai-web-common/packages/unit/lib/dashboard/component/fragment_basic_info.jsx": "import { DateRangeInfoFragment } from './info_fragments/date_range_info_fragment'",
-      "../ones-ai-web-common/packages/unit/lib/dashboard/component/info_fragments/date_range_info_fragment.jsx": "import { BasicInfoIconModel, DateRangeInput } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/unit/lib/item_key_field_list/key_field.jsx": "import { BasicInfoIconModel, PopoverCalendar } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/widgets/src/scripts/antd/popover_calendar.jsx": "import wrapPicker from 'antd/lib/date-picker/wrapPicker'",
-      "../ones-ai-web-common/packages/widgets/src/scripts/input/base_date_range_input.jsx": "import RangePicker from '../antd/date-picker/range_picker'",
       "../ones-ai-web-common/packages/widgets/src/scripts/input/index.js": "import RangeRelativeDatePicker from './range_relative_date_picker'",
       "../ones-ai-web-common/packages/widgets/src/scripts/input/range_relative_date_picker.jsx": "import RelativeDatePicker from './relative_date_picker'"
     },
-    "coverage": "47.62%"
+    "coverage": "78.13%"
   },
   "TimePicker": {
     "new": 3,
@@ -454,50 +452,29 @@
     "coverage": "75.00%"
   },
   "Steps": {
-    "new": 1,
-    "old": 1,
-    "files": {
-      "../ones-project-web/src/scripts/ui/views/automation/header.tsx": "import { Step, Steps } from './step'"
-    },
-    "coverage": "50.00%"
+    "new": 2,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
   },
   "Avatar": {
-    "new": 51,
-    "old": 9,
-    "files": {
-      "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/register_components.js": "import { MemberAvatar } from '@ones-ai/unit'",
-      "../ones-ai-web-common/packages/unit/lib/avatar/index.js": "import BaseAvatar from './base_avatar'",
-      "../ones-ai-web-common/packages/unit/lib/avatar/member_avatar.jsx": "import { getAvatarUrl } from './get_avatar_url'",
-      "../ones-ai-web-common/packages/wiki/src/scripts/ui/components/page_content/page_editor/wiz_page_editor/wiz_page_editor.jsx": "import { getAvatarUrl } from '@ones-ai/unit/lib/avatar/get_avatar_url'",
-      "../ones-ai-web-common/packages/wiki/src/scripts/ui/components/page_content/page_viewer/wiz_page_viewer/page_viewer.jsx": "import { getAvatarUrl } from '@ones-ai/unit/lib/avatar/get_avatar_url'",
-      "../ones-ai-web-common/packages/wiki/src/scripts/ui/views/desktop/page_history/page_history_layout/wiz_page_history_layout.jsx": "import { getAvatarUrl } from '@ones-ai/unit/lib/avatar/get_avatar_url'",
-      "../ones-ai-web-common/packages/wiz-editor/src/scripts/wiz_editor_react.tsx": "import { getAvatarUrl } from '@ones-ai/unit/lib/avatar/get_avatar_url'"
-    },
-    "coverage": "85.00%"
-  },
-  "Collapse": {
-    "new": 1,
+    "new": 54,
     "old": 5,
     "files": {
-      "../ones-project-web/src/scripts/ui/views/config_center/LeftNav.jsx": "import { Collapse } from 'antd'",
-      "../ones-ai-web-common/packages/components/src/scripts/manhour/task_detail/collapse/index.jsx": "import Collapse from './collapse'",
-      "../ones-ai-web-common/packages/components/src/scripts/manhour/task_detail/manhour_list.jsx": "import Collapse from './collapse'",
-      "../ones-ai-web-common/packages/components/src/scripts/team/team_manhour_mode_setting/example/detailed_mode_manhour_example/member_manhour_list.jsx": "import Collapse from '@ones-ai/components/src/scripts/manhour/task_detail/collapse'",
-      "../ones-ai-web-common/packages/unit/lib/beginner_task_guide_dialog/beginner_task_guide_dialog.jsx": "import { Collapse } from 'antd'"
+      "../ones-ai-web-common/packages/components/src/scripts/open_platform_connector/register_components.js": "import { MemberAvatar } from '@ones-ai/unit'",
+      "../ones-ai-web-common/packages/unit/lib/avatar/index.ts": "import BaseAvatar from './base_avatar'",
+      "../ones-ai-web-common/packages/unit/lib/avatar/member_avatar.jsx": "import { getAvatarUrl } from './get_avatar_url'"
     },
-    "coverage": "16.67%"
-  },
-  "Anchor": {
-    "new": 0,
-    "old": 2,
-    "files": {
-      "../ones-project-web/src/scripts/ui/views/layout_editor/screen/components/form_root.jsx": "import AnchorNavigation from '@ones-ai/components/src/scripts/layout/components/navigation/anchor_navigation'",
-      "../ones-ai-web-common/packages/components/src/scripts/ui/views/global_add/task_edit_dialog/index.tsx": "import AnchorNavigation from '@ones-ai/components/src/scripts/layout/components/navigation/anchor_navigation'"
-    },
-    "coverage": "0.00%"
+    "coverage": "91.53%"
   },
   "InputNumber": {
     "new": 26,
+    "old": 0,
+    "files": {},
+    "coverage": "100.00%"
+  },
+  "Progress": {
+    "new": 7,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
@@ -520,16 +497,6 @@
     "files": {},
     "coverage": "100.00%"
   },
-  "Percent": {
-    "new": 0,
-    "old": 3,
-    "files": {
-      "../ones-ai-web-common/packages/components/src/scripts/dashboard/progress_bar/task_count_progress_bar.jsx": "import { ProgressBar } from '@ones-ai/widgets'",
-      "../ones-ai-web-common/packages/unit/lib/global_progress_manage/job_types/upload_operate.jsx": "import { ProgressBar } from './widgets'",
-      "../ones-ai-web-common/packages/unit/lib/global_progress_manage/job_types/upload_wiki_local_file_operate.jsx": "import { ProgressBar } from './widgets'"
-    },
-    "coverage": "0.00%"
-  },
   "Card": {
     "new": 3,
     "old": 0,
@@ -543,6 +510,14 @@
       "../ones-ai-web-common/packages/components/src/scripts/login_notifications/index.jsx": "import { notification } from 'antd'"
     },
     "coverage": "0.00%"
+  },
+  "Collapse": {
+    "new": 4,
+    "old": 1,
+    "files": {
+      "../ones-ai-web-common/packages/components/src/scripts/manhour/task_detail/collapse/index.jsx": "import Collapse from './collapse'"
+    },
+    "coverage": "80.00%"
   },
   "Icon": {
     "new": 0,
@@ -561,7 +536,7 @@
     "coverage": "0.00%"
   },
   "Option": {
-    "new": 7,
+    "new": 8,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
@@ -573,7 +548,7 @@
     "coverage": "100.00%"
   },
   "Result": {
-    "new": 5,
+    "new": 6,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
@@ -586,14 +561,14 @@
     },
     "coverage": "0.00%"
   },
-  "Progress": {
-    "new": 5,
+  "Badge": {
+    "new": 9,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
-  "Badge": {
-    "new": 5,
+  "Slider": {
+    "new": 2,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
@@ -615,57 +590,17 @@
     },
     "coverage": "0.00%"
   },
-  "getLocaleCode": {
-    "new": 0,
-    "old": 1,
-    "files": {
-      "../ones-ai-web-common/packages/unit/lib/antd/date-picker/range_picker.jsx": "import { getLocaleCode } from 'antd/lib/_util/getLocale'"
-    },
-    "coverage": "0.00%"
-  },
-  "warning": {
-    "new": 0,
-    "old": 1,
-    "files": {
-      "../ones-ai-web-common/packages/unit/lib/antd/date-picker/range_picker.jsx": "import warning from 'antd/lib/_util/warning'"
-    },
-    "coverage": "0.00%"
-  },
-  "default": {
-    "new": 0,
-    "old": 1,
-    "files": {
-      "../ones-ai-web-common/packages/unit/lib/antd/date-picker/range_picker.jsx": "import { default as locale_zh_CN } from 'antd/lib/date-picker/locale/zh_CN'"
-    },
-    "coverage": "0.00%"
-  },
-  "enUS": {
-    "new": 0,
-    "old": 1,
-    "files": {
-      "../ones-ai-web-common/packages/unit/lib/antd2_locale_provider.tsx": "import enUS from 'antd/lib/locale-provider/en_US'"
-    },
-    "coverage": "0.00%"
-  },
-  "ja": {
-    "new": 0,
-    "old": 1,
-    "files": {
-      "../ones-ai-web-common/packages/unit/lib/antd2_locale_provider.tsx": "import ja from 'antd/lib/locale-provider/ja_JP'"
-    },
-    "coverage": "0.00%"
-  },
   "CanvasTable": {
     "new": 1,
     "old": 0,
     "files": {},
     "coverage": "100.00%"
   },
-  "Slider": {
+  "Percent": {
     "new": 0,
     "old": 1,
     "files": {
-      "../ones-ai-web-common/packages/unit/lib/popover_progress_slider/popover_progress_slider.jsx": "import { Slider } from 'antd'"
+      "../ones-ai-web-common/packages/unit/lib/global_progress_manage/job_types/upload_wiki_local_file_operate.jsx": "import { ProgressBar } from './widgets'"
     },
     "coverage": "0.00%"
   }

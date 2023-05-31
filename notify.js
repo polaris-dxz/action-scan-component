@@ -8,37 +8,42 @@ const progress_url = 'https://our.ones.pro/wiki/#/team/RDjYMhKq/space/A6tq64xH/p
 const progress_time = new Date().toLocaleString()
 
 const TEXT_ALL_COVERAGE = `[组件替换进度](${progress_url})：${all_coverage} (${progress_time})\n`
-let TEXT_COMPONENTS = 'P0:\n'
+let TEXT_COMPONENTS = ''
 let TEXT_STYLE = '样式替换:\n'
-let TEXT_PENDING = 'P1:\n'
+let TEXT_IGNORE = '下半年替换:\n'
 
 const ignoreComponents = [
-  '', 
+  // '', 
   'Upload', 
   'UserTransfer', 
   'Transfer', 
-  'getLocaleCode', 
-  'warning', 
-  'default', 
-  'enUS', 
-  'ja',
+  // 'getLocaleCode', 
+  // 'warning', 
+  // 'default', 
+  // 'enUS', 
+  // 'ja',
   'Layout', 
   'List',
   '​Upload',
 ]
-const pendingComponents = [
-  'ConfigProvider', 
-  'Table', 
-  'Filter', 
-  'DatePicker', 
-  'Steps', 
-  'Collapse', 
-  'Anchor', 
-  'Percent', 
-  'Notification', 
-  'Progress', 
-  'Slider'
-]
+
+// // 开发平台替换
+// const opComponents = [
+//   'Button',
+//   'Select',
+//   'Dropdown',
+//   'Checkbox',
+//   'Radio',
+//   'Tabs',
+//   'TimePicker',
+//   'Icon'
+// ]
+
+// // wiki 替换
+// const wikiComponents = [
+//   'Empty',
+//   'Avatar'
+// ]
 
 const getTextCoverage = (coverage) => {
   let TEXT_COVERAGE = ''
@@ -57,11 +62,11 @@ Object.keys(progress).forEach((key) => {
     const TEXT_FILES = `<font color="comment">${files}</font>`
     const coverage = progress[key].coverage
     const TEXT_COVERAGE = getTextCoverage(coverage)
-    if (files !== 0 && !ignoreComponents.includes(key)) {
+    if (files !== 0) {
       if (key === 'antd') {
         TEXT_STYLE += `\`${key}\`(${TEXT_FILES}) coverage: ${TEXT_COVERAGE}\n`
-      } else if (pendingComponents.includes(key)) {
-        TEXT_PENDING += `\`${key}\`(${TEXT_FILES}) coverage: ${TEXT_COVERAGE}\n`
+      } else if (ignoreComponents.includes(key)) {
+        TEXT_IGNORE += `\`${key}\`(${TEXT_FILES}) coverage: ${TEXT_COVERAGE}\n`
       } else {
         TEXT_COMPONENTS += `\`${key}\`(${TEXT_FILES}) coverage: ${TEXT_COVERAGE}\n`
       }     
@@ -69,7 +74,7 @@ Object.keys(progress).forEach((key) => {
   }
 })
 
-const content = `${TEXT_ALL_COVERAGE}${TEXT_COMPONENTS}${TEXT_PENDING}${TEXT_STYLE}`
+const content = `${TEXT_ALL_COVERAGE}${TEXT_COMPONENTS}${TEXT_IGNORE}${TEXT_STYLE}`
 
 const pushNotifications = (url, content) => {
   
